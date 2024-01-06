@@ -47,7 +47,7 @@ const Tour = () => {
 
   return (
     <div>
-      {notours ? (
+      {!tours ? (
         <Refresh fetchData={fetchData} />
       ) : (
         tours.map((myTour) => {
