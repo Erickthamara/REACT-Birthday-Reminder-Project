@@ -43,6 +43,7 @@ const Review = () => {
             type="button"
             onClick={() => previousPerson(oneEmployee.id)}
           >{`<`}</button>
+
           <button
             className="btn2"
             type="button"
