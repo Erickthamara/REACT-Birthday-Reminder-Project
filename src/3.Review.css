@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  /* font-size: 16px; */
+  box-sizing: border-box;
+  /* background: linear-gradient(to top, black, rgb(181, 181, 207));
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(218, 224, 230);
+}
+
+.img-container {
+  height: 150px;
+  width: 150px;
+  position: relative;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: blueviolet;
+  margin-bottom: 10px;
+}
+
+.img-container .profile-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px whitesmoke;
+}
+
+.card-conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 370px;
+  width: 100%;
+  background-color: beige;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+  padding: 17px;
+  border-radius: 24px;
+}
+
+.card-conatiner h3 {
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.card-conatiner h4 {
+  font-size: 17px;
+  font-weight: 100;
+  margin-bottom: 5px;
+}
+
+.card-conatiner .next-buttons {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.card-conatiner p {
+  display: flex;
+  align-items: center;
+  border: 6px;
+  border-color: rgb(42, 32, 32);
+  border-radius: 24px;
+}
+
+.next-buttons .btn2 {
+  color: aliceblue;
+  margin: 10px;
+  font-size: 25px;
+  border-radius: 24px;
+  padding: 5px 10px;
+  background-color: blueviolet;
+  border: none;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.next-buttons .btn2:hover {
+  background-color: aqua;
+}
+#surprise {
+  color: aliceblue;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 24px;
+  padding: 5px 10px;
+  background-color: blueviolet;
+  border: none;
+  font-weight: 250;
+}
+
+#surprise:hover {
+  background-color: aqua;
+}

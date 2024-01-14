@@ -2,13 +2,13 @@
 // import viteLogo from "/vite.svg";
 
 import "./App.css";
-import Tour from "./2.Tours/Tour";
+import Review from "./3.Reviews/Review";
 
 function App() {
   return (
     <>
-      <h1>Tours</h1>
-      <Tour />
+      <h1>Reviews</h1>
+      <Review />
     </>
   );
 }
