@@ -2,13 +2,13 @@
 // import viteLogo from "/vite.svg";
 
 import "./App.css";
-import Review from "./3.Reviews/Review";
+import Tabs from "./5.Tabs/Tabs";
 
 function App() {
   return (
     <>
-      <h1>Reviews</h1>
-      <Review />
+      <h2>Tabs Project</h2>
+      <Tabs />
     </>
   );
 }
