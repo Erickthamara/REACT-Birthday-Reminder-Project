@@ -49,12 +49,8 @@ const Tabs = () => {
               <button
                 className="job-btn"
                 onClick={() => {
-                  if (company == "TOMMY") {
-                    setCheckOrder(3);
-                  } else if (company == "BIGDROP") {
-                    setCheckOrder(2);
-                  } else if (company == "CUKER") {
-                    setCheckOrder(1);
+                  if (company == company) {
+                    setCheckOrder(order);
                   }
                 }}
               >
