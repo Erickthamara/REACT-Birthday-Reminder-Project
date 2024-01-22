@@ -8,6 +8,7 @@ const Tabs = () => {
   const [companyData, setcompanyData] = useState([]);
   const [loading, setIsLoading] = useState(true);
   const [iserror, setIsError] = useState(false);
+  const [checkoder, setCheckOrder] = useState(1);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,34 +27,72 @@ const Tabs = () => {
     setIsLoading(false);
   }, []);
 
+  //    const changeName=()=>{
+  //     if company==
+  //    }
+
   if (loading) {
     return <LoadingMessage />;
   }
   if (iserror) {
-    return <h2>not working</h2>;
+    return <ErrorMessage />;
   }
+
   return (
-    <div>
-      {}
-      <div className="jobs-center">
-        <div className="btn-container">
-          <button className="job-btn">Click Me</button>
-        </div>
-        <div className="job-info">
-          <h3>engineer</h3>
-          <h4>company</h4>
-          <div className="job-date">date</div>
-          <div className="job-desc">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-              similique ducimus aliquam nemo possimus architecto tenetur
-              provident quos fuga voluptate cupiditate ea natus sunt, veniam
-              eaque est explicabo, atque repellat!
-            </p>
-            <div className="job-icon">{`<<`}</div>
+    <div className="jobs-center">
+      {companyData.map((person) => {
+        const { company, dates, duties, id, order, title } = person;
+
+        return (
+          <div key={order}>
+            <div className="btn-container">
+              <button
+                className="job-btn"
+                onClick={() => {
+                  if (company == "TOMMY") {
+                    setCheckOrder(3);
+                  } else if (company == "BIGDROP") {
+                    setCheckOrder(2);
+                  } else if (company == "CUKER") {
+                    setCheckOrder(1);
+                  }
+                }}
+              >
+                {company}
+              </button>
+            </div>
+
+            {
+              checkoder === order ? (
+                <div className="job-info">
+                  <h3>{title}</h3>
+                  <h4>{company}</h4>
+                  <div className="job-date">{dates}</div>
+                  <div className="job-desc">
+                    {duties.map((duty) => {
+                      return <p>{duty}</p>;
+                    })}
+                    <div className="job-icon">{`<<`}</div>
+                  </div>
+                </div>
+              ) : (
+                <h2>No number</h2>
+              )
+              /* <div className="job-info">
+                <h3>{title}</h3>
+                <h4>{company}</h4>
+                <div className="job-date">{dates}</div>
+                <div className="job-desc">
+                  {duties.map((duty) => {
+                    return <p>{duty}</p>;
+                  })}
+                  <div className="job-icon">{`<<`}</div>
+                </div>
+              </div> */
+            }
           </div>
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 };
