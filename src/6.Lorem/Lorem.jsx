@@ -1,35 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import text from "./data";
 const Lorem = () => {
   const [num, SetNum] = useState(0);
   const [maxNums, SetMaxNums] = useState(0);
-  //console.log(text);
-  const grabNum = (e) => {
-    //e.preventdefault();
-    console.log(e.target.value);
-    SetNum(e.target.value);
-    SetMaxNums(e.target.value - 1);
-    // console.log(maxNums);
+  const [displayList, SetDisplayList] = useState([]);
+
+  // const grabNum = (e) => {
+  //   SetNum(e.target.value);
+  //   console.log(`Targest is ${e.target.value}`);
+  //   //console.log(`State num  is ${num}`);
+  // };
+  const para = () => {
+    console.log(maxNums);
+    const actualNums = text.filter((par, index) => {
+      return index < num;
+    });
+    SetDisplayList(actualNums);
+  };
+
+  const handleClick = (e) => {
+    console.log(num);
+    SetMaxNums(num + 1);
     para();
   };
-  const para = () => {
-    console.log(`Num is ${num}`);
-    const actualNums = text.filter((par, index) => {
-      return index <= num;
-    });
-    SetMaxNums(actualNums);
-    console.log(actualNums);
-  };
+  // useEffect(() => {
+  //   para()
+  // }, [handleClick])
 
   return (
     <div>
       <div>
         <h4 className="label">Paragraph: </h4>
-        <input type="number" placeholder="0" onChange={grabNum} />
-        <button className="btn">GENERATE</button>
+        <input
+          type="number"
+          placeholder="0"
+          onChange={(e) => SetNum(e.target.value)}
+        />
+        <button className="btn" onClick={handleClick}>
+          GENERATE
+        </button>
       </div>
-      {maxNums &&
-        maxNums.map((txt, index) => {
+      {displayList &&
+        displayList.map((txt, index) => {
           return (
             <section className="section" key={index}>
               {txt}
