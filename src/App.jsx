@@ -2,13 +2,12 @@
 // import viteLogo from "/vite.svg";
 
 import "./App.css";
-import Lorem from "./6.Lorem/Lorem";
+import GroceryBud from "./7.Grocery-Bud/GroceryBud";
 
 function App() {
   return (
     <>
-      <h2>Lorem Project</h2>
-      <Lorem />
+      <GroceryBud />
     </>
   );
 }
