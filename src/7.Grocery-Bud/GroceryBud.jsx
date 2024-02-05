@@ -4,12 +4,20 @@ import { IoMdCheckmarkCircle } from "react-icons/io";
 const GroceryBud = () => {
   const [grocerys, setGrocerys] = useState([]);
   const [item, setItem] = useState("");
+  const [edit, setEdit] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(item);
-    const newGrocerys = [...grocerys, item];
-    setGrocerys(newGrocerys);
-    console.log(newGrocerys);
+    if (!item) {
+      // alert no item
+    } else if (item && edit) {
+      // edit logic
+    } else {
+      const newGrocerys = [...grocerys, item];
+      setGrocerys(newGrocerys);
+      setItem("");
+      console.log(newGrocerys);
+    }
   };
   const handledeleteItem = (id) => {
     const newList = grocerys.filter((item, index) => {
@@ -29,12 +37,13 @@ const GroceryBud = () => {
           <input
             type="text"
             className="grocery"
+            value={item}
             onChange={(e) => setItem(e.target.value)}
             placeholder="eg.milk"
           />
 
           <button className="submit-btn" type="submit">
-            SUBMIT
+            {edit ? "EDIT" : "SUBMIT"}
           </button>
         </div>
       </form>
