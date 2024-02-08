@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import "./7.GroceryBud.css";
+import "./8.NavBar.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);

@@ -2,12 +2,12 @@
 // import viteLogo from "/vite.svg";
 
 import "./App.css";
-import GroceryBud from "./7.Grocery-Bud/GroceryBud";
+import NavBar from "./8.Navbar/NavBar";
 
 function App() {
   return (
     <>
-      <GroceryBud />
+      <NavBar />
     </>
   );
 }
